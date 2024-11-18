@@ -1,0 +1,139 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="Roth_Asset_Performance" language="java" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ced95029-b569-4027-895c-af2843a4e088">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Portfolio management"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50.0" bold="true"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18.0"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12.0" bold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12.0"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle backcolor="#E6DAC3">
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<query language="SQL"><![CDATA[ SELECT * FROM portfolio_management.roth_top_picks ]]></query>
+	<field name="ticker_symbol" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ticker_symbol"/>
+		<property name="com.jaspersoft.studio.field.label" value="ticker_symbol"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="roth_ira"/>
+	</field>
+	<field name="shares" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="shares"/>
+		<property name="com.jaspersoft.studio.field.label" value="shares"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="roth_top_picks"/>
+	</field>
+	<field name="total_investment" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="total_investment"/>
+		<property name="com.jaspersoft.studio.field.label" value="total_investment"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="roth_top_picks"/>
+	</field>
+	<field name="total_profit" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="total_profit"/>
+		<property name="com.jaspersoft.studio.field.label" value="total_profit"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="roth_top_picks"/>
+	</field>
+	<field name="cost_to_profit_ratio" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="cost_to_profit_ratio"/>
+		<property name="com.jaspersoft.studio.field.label" value="cost_to_profit_ratio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="roth_top_picks"/>
+	</field>
+	<field name="percentage_of_portfolio" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="percentage_of_portfolio"/>
+		<property name="com.jaspersoft.studio.field.label" value="percentage_of_portfolio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="roth_top_picks"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="136" splitType="Stretch">
+		<element kind="image" uuid="ddc15723-2728-421f-b95e-2df9faf64ce1" x="0" y="0" width="164" height="126">
+			<expression><![CDATA["coffee.jpg"]]></expression>
+		</element>
+		<element kind="staticText" uuid="1a652692-054a-40f3-ade5-68d8da36626d" x="170" y="0" width="300" height="62" fontName="Serif" fontSize="29.0" vTextAlign="Middle" style="Title">
+			<text><![CDATA[Roth Performance Report]]></text>
+		</element>
+		<element kind="staticText" uuid="88d4231e-f014-4b0d-b871-1737ba63a1ae" x="170" y="62" width="241" height="64" fontName="Serif" fontSize="16.0" style="SubTitle">
+			<text><![CDATA[This report delivers critical data on the state of your roth account with panache]]></text>
+		</element>
+		<element kind="image" uuid="5d64e5b3-07bb-48ab-89dc-15c0c46bb19a" x="433" y="-115" width="267" height="209">
+			<expression><![CDATA["coffee_stain.png"]]></expression>
+		</element>
+	</title>
+	<pageHeader splitType="Stretch"/>
+	<columnHeader height="62" splitType="Stretch">
+		<element kind="line" uuid="1a61a836-d137-48b1-ad67-6ff64600bf93" positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1">
+			<pen lineWidth="0.5" lineColor="#999999"/>
+		</element>
+		<element kind="staticText" uuid="ae9c233e-a555-42d7-9253-7579c4940a6e" stretchType="ElementGroupHeight" x="0" y="0" width="92" height="30" forecolor="#736343" fontName="Serif" fontSize="12.0" hTextAlign="Center" style="Column header">
+			<text><![CDATA[Ticker Symbol	]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7377f483-85b2-4b75-9e1d-ec03255761f8"/>
+		</element>
+		<element kind="staticText" uuid="83e9f5e0-7f04-4f39-ba4a-d7a0b916f661" stretchType="ElementGroupHeight" x="92" y="0" width="92" height="30" forecolor="#736343" fontName="Serif" fontSize="12.0" hTextAlign="Center" style="Column header">
+			<text><![CDATA[Number of Shares	]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b14757d7-8a28-4043-ae43-051412ed003e"/>
+		</element>
+		<element kind="staticText" uuid="a7149122-4ef7-47d0-876b-0a8fdab31688" stretchType="ElementGroupHeight" x="184" y="0" width="92" height="30" forecolor="#736343" fontName="Serif" fontSize="12.0" hTextAlign="Center" style="Column header">
+			<text><![CDATA[Total Investment ]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5cffe39c-1469-452c-a656-9ba563051ee1"/>
+		</element>
+		<element kind="staticText" uuid="4eb9a3ba-6927-46db-a26b-7330c40126c7" stretchType="ElementGroupHeight" x="276" y="0" width="92" height="30" forecolor="#736343" fontName="Serif" fontSize="12.0" hTextAlign="Center" style="Column header">
+			<text><![CDATA[Current Value ]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="580e808b-3f9f-4826-97f8-135c58649953"/>
+		</element>
+		<element kind="staticText" uuid="bc7301d5-8dd6-475e-adcb-18f29e926e7e" stretchType="ElementGroupHeight" x="368" y="0" width="92" height="30" forecolor="#736343" fontName="Serif" fontSize="12.0" hTextAlign="Center" style="Column header">
+			<text><![CDATA[Cost to Profit Ratio	]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1e814e2e-923b-4d6f-93d9-d43e040598d5"/>
+		</element>
+		<element kind="staticText" uuid="c01e21a6-96fa-4099-950f-1b93f3971a54" stretchType="ElementGroupHeight" x="460" y="0" width="92" height="30" forecolor="#736343" fontName="Serif" fontSize="12.0" hTextAlign="Center" style="Column header">
+			<text><![CDATA[% of Roth Account]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="abec1b80-3ffb-4c14-b9ea-ad484ecb4bb7"/>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<element kind="frame" uuid="a98495d8-3c8d-4fa0-81f5-30c3efc2f766" mode="Opaque" x="1" y="-31" width="555" height="15" style="Row">
+				<element kind="textField" uuid="c5fe6bd6-808e-487b-9526-82651be8a6f2" x="-2" y="-1" width="92" height="16" fontName="Serif" fontSize="12.0" textAdjust="StretchHeight" hTextAlign="Center" style="Detail">
+					<expression><![CDATA[$F{ticker_symbol}]]></expression>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7377f483-85b2-4b75-9e1d-ec03255761f8"/>
+				</element>
+				<element kind="textField" uuid="a5f98d8c-a05d-4bec-8fab-6bb8bbaf4a0d" x="91" y="0" width="92" height="16" fontName="Serif" fontSize="12.0" textAdjust="StretchHeight" hTextAlign="Center" style="Detail">
+					<expression><![CDATA[$F{shares}]]></expression>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b14757d7-8a28-4043-ae43-051412ed003e"/>
+				</element>
+				<element kind="textField" uuid="b3a31016-f640-466c-a13e-cfa750f809d4" x="183" y="0" width="92" height="16" fontName="Serif" fontSize="12.0" textAdjust="StretchHeight" pattern="¤#,##0.##;¤-#,##0.##" hTextAlign="Center" style="Detail">
+					<expression><![CDATA[$F{total_investment}]]></expression>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5cffe39c-1469-452c-a656-9ba563051ee1"/>
+				</element>
+				<element kind="textField" uuid="48819a0a-e0a2-4fdd-9522-b4198759b347" x="275" y="0" width="92" height="16" fontName="Serif" fontSize="12.0" textAdjust="StretchHeight" pattern="¤#,##0.##;¤-#,##0.##" hTextAlign="Center" style="Detail">
+					<expression><![CDATA[$F{total_profit}]]></expression>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="580e808b-3f9f-4826-97f8-135c58649953"/>
+				</element>
+				<element kind="textField" uuid="0734c38f-b35a-48ff-ac67-467c997fa9a1" x="367" y="0" width="92" height="16" fontName="Serif" fontSize="12.0" textAdjust="StretchHeight" hTextAlign="Center" style="Detail">
+					<expression><![CDATA[$F{cost_to_profit_ratio}]]></expression>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1e814e2e-923b-4d6f-93d9-d43e040598d5"/>
+				</element>
+				<element kind="textField" uuid="b33f247d-4fc9-4e8f-bfd9-a189fe531693" x="459" y="0" width="92" height="16" fontName="Serif" fontSize="12.0" textAdjust="StretchHeight" pattern="#,##0.##%" hTextAlign="Center" style="Detail">
+					<expression><![CDATA[$F{percentage_of_portfolio}]]></expression>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="abec1b80-3ffb-4c14-b9ea-ad484ecb4bb7"/>
+				</element>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="66" splitType="Stretch">
+		<element kind="line" uuid="fa45a887-615a-4d84-a2d7-8a2219671b3c" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1">
+			<pen lineWidth="0.5" lineColor="#999999"/>
+		</element>
+	</columnFooter>
+	<pageFooter height="25" splitType="Stretch">
+		<element kind="frame" uuid="183682bc-d976-4756-83e0-6625a3f98ed1" mode="Opaque" x="-21" y="1" width="597" height="24" forecolor="#D0B48E" backcolor="#F2EBDF">
+			<element kind="textField" uuid="0193f9b3-1559-491a-8580-b6988863b6a1" x="533" y="0" width="40" height="20" forecolor="#736343" fontSize="10.0" evaluationTime="Report" bold="false" vTextAlign="Middle" style="Column header">
+				<expression><![CDATA[" " + $V{PAGE_NUMBER}]]></expression>
+			</element>
+			<element kind="textField" uuid="d00b105e-494b-418b-8ac9-8b1b4824f4f0" x="453" y="0" width="80" height="20" forecolor="#736343" fontSize="10.0" bold="false" hTextAlign="Right" vTextAlign="Middle" style="Column header">
+				<expression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></expression>
+			</element>
+			<element kind="textField" uuid="0616f3fe-0354-456f-8911-ec30ec51a5ae" x="22" y="1" width="197" height="20" forecolor="#736343" fontSize="10.0" pattern="EEEEE dd MMMMM yyyy" bold="false" vTextAlign="Middle" style="Column header">
+				<expression><![CDATA[new java.util.Date()]]></expression>
+			</element>
+		</element>
+	</pageFooter>
+	<summary splitType="Stretch"/>
+</jasperReport>

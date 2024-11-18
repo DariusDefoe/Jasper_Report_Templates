@@ -1,0 +1,355 @@
+<!-- Created with Jaspersoft Studio version 7.0.0.final using JasperReports Library version 7.0.0-b478feaa9aab4375eba71de77b4ca138ad2f62aa  -->
+<jasperReport name="Modelo_362_Residence_1T24" language="java" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4eedbb89-b4f6-4469-9ab6-f642a1688cf7">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Administration"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50.0" bold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18.0" bold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14.0" bold="true"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle mode="Opaque" backcolor="#EEEFF0">
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="Table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<leftPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+			<rightPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#CACED0">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle backcolor="#D8D8D8">
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<dataset name="tableDataset" uuid="f13e6d36-5148-4ecc-bbe3-3035def80980">
+		<query language="sql"><![CDATA[]]></query>
+	</dataset>
+	<query language="SQL"><![CDATA[ SELECT * FROM`Administration`.vw_modelo362_residence_filtered_1t24 ]]></query>
+	<field name="NIF" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NIF"/>
+		<property name="com.jaspersoft.studio.field.label" value="NIF"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_suppliers"/>
+	</field>
+	<field name="Nombre_o_Denominacion_Social" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Nombre_o_Denominacion_Social"/>
+		<property name="com.jaspersoft.studio.field.label" value="Nombre_o_Denominacion_Social"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_suppliers"/>
+	</field>
+	<field name="Importe_Total_Impuestos_Incluidos" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Importe_Total_Impuestos_Incluidos"/>
+		<property name="com.jaspersoft.studio.field.label" value="Importe_Total_Impuestos_Incluidos"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_invoices_residence"/>
+	</field>
+	<field name="Numero_Factura" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Numero_Factura"/>
+		<property name="com.jaspersoft.studio.field.label" value="Numero_Factura"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_invoices_residence"/>
+	</field>
+	<field name="Fecha_Emision" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Fecha_Emision"/>
+		<property name="com.jaspersoft.studio.field.label" value="Fecha_Emision"/>
+	</field>
+	<field name="Cuota_IVA" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Cuota_IVA"/>
+		<property name="com.jaspersoft.studio.field.label" value="Cuota_IVA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_invoices_residence"/>
+	</field>
+	<variable name="SUMA_CUOTAS_IVA" resetType="Page" calculation="Sum" class="java.math.BigDecimal">
+		<description><![CDATA[SUMA CUOTAS IVA]]></description>
+		<expression><![CDATA[$F{Cuota_IVA}]]></expression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<title height="82" splitType="Stretch">
+		<element kind="line" uuid="806ce5df-1219-4876-ae0c-ca7405b1f246" x="0" y="80" width="556" height="1">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</element>
+		<element kind="image" uuid="94883631-a913-43e2-b182-ab8d77d0181e" x="20" y="10" width="503" height="70" hImageAlign="Center">
+			<expression><![CDATA["/Users/dariuswhite/Pictures/agencia_tributaria_logo_final.png"]]></expression>
+		</element>
+	</title>
+	<pageHeader height="105">
+		<element kind="staticText" uuid="235bf8b6-1e1e-49c7-b59f-7a46c30b8209" x="140" y="48" width="120" height="30" bold="true">
+			<text><![CDATA[Residencia de la Embajada de la India]]></text>
+			<box>
+				<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="665f25c2-8663-4951-b699-1ab863bdeb76" x="140" y="78" width="120" height="15" bold="true">
+			<text><![CDATA[N641004D]]></text>
+			<box>
+				<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="b62092ec-9053-4f27-b387-9b25d2909a68" x="410" y="70" width="120" height="15" bold="true">
+			<text><![CDATA[2024]]></text>
+			<box>
+				<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="edbd74ac-0cbd-44c9-8a8e-ccf745191172" x="290" y="70" width="120" height="15">
+			<text><![CDATA[Ejercicio:]]></text>
+			<box>
+				<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="dd52166a-1135-4931-adef-51e7972118bc" x="290" y="53" width="120" height="15">
+			<text><![CDATA[Periodo:]]></text>
+			<box>
+				<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="2d2f365d-7b12-4a8f-990d-ff528a2660bc" x="410" y="53" width="120" height="15" bold="true">
+			<text><![CDATA[1T]]></text>
+			<box>
+				<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="1d3045ed-03d6-4253-a959-aeeb491b73ca" x="20" y="78" width="120" height="15">
+			<text><![CDATA[NIF del solicitante:]]></text>
+			<box>
+				<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="33274f5d-5b7e-4be2-a2ff-65d452a618ed" x="20" y="48" width="120" height="15">
+			<text><![CDATA[Solicitante:]]></text>
+			<box>
+				<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+		</element>
+		<element kind="textField" uuid="6a39e2c4-7058-41a6-966a-98446362ef36" x="450" y="33" width="100" height="20">
+			<expression><![CDATA[$V{PAGE_NUMBER}]]></expression>
+			<box>
+				<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="ea8312d4-9675-4f72-9a9c-1ced3a97ad4f" x="350" y="33" width="100" height="20">
+			<text><![CDATA[Hoja nº]]></text>
+			<box>
+				<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="57aed2b1-4f4e-40a3-a6ad-54dae8dd4c5a" x="160" y="8" width="250" height="25" fontSize="16.0" bold="true">
+			<text><![CDATA[RELACIÓN DE FACTURAS]]></text>
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</element>
+	</pageHeader>
+	<columnHeader height="42">
+		<element kind="staticText" uuid="1f425d2c-433d-420f-9ecd-35c998b8207c" positionType="Float" stretchType="ContainerHeight" x="24" y="1" width="76" height="40" forecolor="#000000" fontName="Arial" fontSize="12.0" bold="true" style="Column header">
+			<text><![CDATA[NIF]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4363978b-41a0-458b-949e-608ed9d27437"/>
+			<box style="Column header">
+				<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+				<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+				<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+				<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="c6ffde4e-0745-4003-9846-d63aeff48090" positionType="Float" stretchType="ContainerHeight" x="100" y="1" width="104" height="40" forecolor="#000000" fontName="Arial" fontSize="12.0" bold="true" style="Column header">
+			<text><![CDATA[Nombre_o_Denominacion_Social]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0f552c57-5f43-43cb-877b-47cd2091957d"/>
+			<box style="Column header">
+				<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+				<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+				<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+				<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="345afcaa-c9cc-4a13-99a7-4ab32ffef5af" positionType="Float" stretchType="ContainerHeight" x="204" y="1" width="100" height="40" forecolor="#000000" fontName="Arial" fontSize="12.0" bold="true" style="Column header">
+			<text><![CDATA[Importe_Total_Impuestos_Incluidos]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9eca5043-1035-4dfd-b581-f0c783f153bc"/>
+			<box style="Column header">
+				<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+				<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+				<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+				<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="50505546-29ca-4715-b407-837897620440" positionType="Float" stretchType="ContainerHeight" x="304" y="1" width="120" height="40" forecolor="#000000" fontName="Arial" fontSize="12.0" bold="true" style="Column header">
+			<text><![CDATA[Numero_Factura]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="24f60a7e-2ea3-454d-8fce-02d307c3bfdb"/>
+			<box style="Column header">
+				<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+				<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+				<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+				<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="46936e9b-a527-4376-9031-10c4337c0bdd" positionType="Float" stretchType="ContainerHeight" x="424" y="0" width="80" height="40" forecolor="#000000" fontName="Arial" fontSize="12.0" bold="true" style="Column header">
+			<text><![CDATA[Fecha_Emision]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="de8742d3-e04c-459b-8417-d2ebdc67554f"/>
+			<box style="Column header">
+				<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+				<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+				<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+				<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="30fcea77-6848-44ed-97dd-0b7d0ea06507" positionType="Float" stretchType="ContainerHeight" x="504" y="0" width="52" height="40" forecolor="#000000" fontName="Arial" fontSize="12.0" bold="true" style="Column header">
+			<text><![CDATA[Cuota_IVA]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d271b6a5-9b9a-4b73-b419-762628006a92"/>
+			<box style="Column header">
+				<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+				<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+				<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+				<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="739f94e9-647d-4ad3-931a-0c48be57fb38" x="0" y="1" width="24" height="40">
+			<text><![CDATA[Nº]]></text>
+			<box>
+				<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="35">
+			<element kind="textField" uuid="dc19e093-6086-4a78-ab47-99bf4a0dedf1" positionType="Float" stretchType="ContainerHeight" x="24" y="0" width="76" height="35" fontName="Arial" fontSize="12.0" textAdjust="ScaleFont" blankWhenNull="true" bold="false" style="Detail">
+				<expression><![CDATA[$F{NIF}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4363978b-41a0-458b-949e-608ed9d27437"/>
+				<box style="Detail">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="2e9ea069-d5f2-4d8a-bcc0-eaa46227a6fc" positionType="Float" stretchType="ContainerHeight" x="100" y="0" width="104" height="35" fontName="Arial" fontSize="12.0" textAdjust="ScaleFont" blankWhenNull="true" bold="false" style="Detail">
+				<expression><![CDATA[$F{Nombre_o_Denominacion_Social}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0f552c57-5f43-43cb-877b-47cd2091957d"/>
+				<box style="Detail">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="47faf85d-c5f2-4363-89c5-0f57de5c29a3" positionType="Float" stretchType="ContainerHeight" x="204" y="0" width="100" height="35" fontName="Arial" fontSize="12.0" textAdjust="ScaleFont" blankWhenNull="true" bold="false" style="Detail">
+				<expression><![CDATA[$F{Importe_Total_Impuestos_Incluidos}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9eca5043-1035-4dfd-b581-f0c783f153bc"/>
+				<box style="Detail">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="dbbcccfa-f1b0-4dcf-9f31-f9314ba317b6" positionType="Float" stretchType="ContainerHeight" x="304" y="0" width="120" height="35" fontName="Arial" fontSize="12.0" textAdjust="ScaleFont" blankWhenNull="true" bold="false" style="Detail">
+				<expression><![CDATA[$F{Numero_Factura}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="24f60a7e-2ea3-454d-8fce-02d307c3bfdb"/>
+				<box style="Detail">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="5c362b47-dc05-422c-9ff1-9b172228349a" positionType="Float" stretchType="ContainerHeight" x="424" y="0" width="80" height="35" fontName="Arial" fontSize="12.0" textAdjust="ScaleFont" blankWhenNull="true" bold="false" style="Detail">
+				<expression><![CDATA[$F{Fecha_Emision}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="de8742d3-e04c-459b-8417-d2ebdc67554f"/>
+				<box style="Detail">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="b123a5ce-e00a-4c6d-8497-6890e405194d" positionType="Float" stretchType="ContainerHeight" x="504" y="0" width="52" height="35" fontName="Arial" fontSize="12.0" textAdjust="ScaleFont" blankWhenNull="true" bold="false" style="Detail">
+				<expression><![CDATA[$F{Cuota_IVA}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d271b6a5-9b9a-4b73-b419-762628006a92"/>
+				<box style="Detail">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#666666"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="7c31917d-3df1-41f0-ad53-4dc6e5a16c9c" x="0" y="0" width="24" height="35" textAdjust="ScaleFont">
+				<expression><![CDATA[$V{REPORT_COUNT}]]></expression>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+			</element>
+		</band>
+	</detail>
+	<pageFooter height="64">
+		<element kind="staticText" uuid="1e78bea6-13a3-4f9d-9422-21b0c37dfcc3" x="315" y="10" width="170" height="34" fontSize="14.0" bold="true">
+			<text><![CDATA[Cuotas IVA
+Total por página ............]]></text>
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</element>
+		<element kind="staticText" uuid="11329dea-5421-458a-a111-248ce6b4f15d" x="500" y="30" width="42" height="14">
+			<text><![CDATA[euros]]></text>
+		</element>
+		<element kind="textField" uuid="f427062e-0229-4085-b7f9-a824b6f9b7d4" x="480" y="10" width="80" height="30">
+			<expression><![CDATA[$V{SUMA_CUOTAS_IVA}]]></expression>
+		</element>
+	</pageFooter>
+</jasperReport>

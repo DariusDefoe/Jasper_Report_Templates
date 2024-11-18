@@ -1,0 +1,64 @@
+<!-- Created with Jaspersoft Studio version 7.0.0.final using JasperReports Library version 7.0.0-b478feaa9aab4375eba71de77b4ca138ad2f62aa  -->
+<jasperReport name="Modelo 362 Personal 1T 24 Filtered" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6bde942d-2efe-4cf8-8619-91ad8669d928">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Administration"/>
+	<query language="SQL"><![CDATA[ SELECT * FROM `Administration`.vw_modelo362_colleagues_personal_filtered_1t24 ]]></query>
+	<field name="Nombre_Colaborador" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Nombre_Colaborador"/>
+		<property name="com.jaspersoft.studio.field.label" value="Nombre_Colaborador"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_colleagues"/>
+	</field>
+	<field name="NIF_Colaborador" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NIF_Colaborador"/>
+		<property name="com.jaspersoft.studio.field.label" value="NIF_Colaborador"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_colleagues"/>
+	</field>
+	<field name="IBAN_Colaborador" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="IBAN_Colaborador"/>
+		<property name="com.jaspersoft.studio.field.label" value="IBAN_Colaborador"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_colleagues"/>
+	</field>
+	<field name="NIF" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NIF"/>
+		<property name="com.jaspersoft.studio.field.label" value="NIF"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_suppliers"/>
+	</field>
+	<field name="Nombre_o_Denominacion_Social" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Nombre_o_Denominacion_Social"/>
+		<property name="com.jaspersoft.studio.field.label" value="Nombre_o_Denominacion_Social"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_suppliers"/>
+	</field>
+	<field name="Importe_Total_Impuestos_Incluidos" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Importe_Total_Impuestos_Incluidos"/>
+		<property name="com.jaspersoft.studio.field.label" value="Importe_Total_Impuestos_Incluidos"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vw_modelo362_colleagues_personal_filtered_1t24"/>
+	</field>
+	<field name="Numero_Factura" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Numero_Factura"/>
+		<property name="com.jaspersoft.studio.field.label" value="Numero_Factura"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_invoices_personal"/>
+	</field>
+	<field name="Fecha_Emision" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Fecha_Emision"/>
+		<property name="com.jaspersoft.studio.field.label" value="Fecha_Emision"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vw_modelo362_colleagues_personal_filtered_1t24"/>
+	</field>
+	<field name="Cuota_IVA" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Cuota_IVA"/>
+		<property name="com.jaspersoft.studio.field.label" value="Cuota_IVA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vw_modelo362_colleagues_personal_filtered_1t24"/>
+	</field>
+	<group name="Nombre_Colaborador">
+		<expression><![CDATA[$F{Nombre_Colaborador}]]></expression>
+	</group>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch"/>
+	<pageHeader height="35" splitType="Stretch"/>
+	<columnHeader height="61" splitType="Stretch"/>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>
